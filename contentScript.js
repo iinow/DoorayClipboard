@@ -358,8 +358,8 @@ function appendButton(target) {
 
 
   const numberButton = initButton(buttonIds[0], postNumber, postNumber)
-  const commitButton = initButton(buttonIds[1], 'CM', postNumber + ' ' + title)
-  const pullRequestButton = initPullMsgButton(buttonIds[2], 'PM', '#' + projectName + '/' + postNumber + ': ' + title, {"id": projectId, "text": projectName})
+  const commitButton = initButton(buttonIds[1], 'Commit Message', `#${postNumber} ${title}`)
+  const pullRequestButton = initPullMsgButton(buttonIds[2], 'MR Message', `#${postNumber}`, {"id": projectId, "text": projectName})
 
   const firstButton = buttonBar.firstChild
 

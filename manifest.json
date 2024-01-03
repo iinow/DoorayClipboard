@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://nhnent.dooray.com/*"],
+      "matches": ["https://*.dooray.com/*"],
       "run_at": "document_end",
       "css": ["notifications.css"],
       "js": ["contentScript.js"]
