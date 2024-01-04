@@ -21,7 +21,7 @@
     }
   ],
   "host_permissions": [
-    "https://nhnent.dooray.com/*",
+    "https://*.dooray.com/*",
     "https://github.nhnent.com/*"
   ]
 }
