@@ -356,10 +356,16 @@ function appendButton(target) {
     }
   }
 
+  let withoutBracketString = ''
+  if (title.lastIndexOf(']') == -1) {
+    withoutBracketString = title;
+  } else {
+    withoutBracketString = title.substring(title.lastIndexOf(']') + 1, title.length).trim();
+  }
 
   const numberButton = initButton(buttonIds[0], postNumber, postNumber)
   const commitButton = initButton(buttonIds[1], 'CM', `#${postNumber}`)
-  const pullRequestButton = initPullMsgButton(buttonIds[2], 'MM', `#${postNumber} ${title}`, {"id": projectId, "text": projectName})
+  const pullRequestButton = initPullMsgButton(buttonIds[2], 'MM', `#${postNumber} ${withoutBracketString}`, {"id": projectId, "text": projectName})
 
   const firstButton = buttonBar.firstChild
 
