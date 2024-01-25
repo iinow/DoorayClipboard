@@ -330,13 +330,13 @@ function createButtonStorageDelete(id, buttonTitle, saveId, saveText, buttonBar,
 }
 
 function appendButton(target) {
+  const common = 'div.css-1iyoj2o > div.css-1s331hr > div.css-1ee2lp9'
   const buttonIds = ['QFD1boxRNX0', 'QFD1boxRNX1', 'QFD1boxRNX2', 'QFD1boxRNX3']
-  const titleElement = target.querySelector('div.css-1iyoj2o > div.css-1z0phxv > div.css-1e8smdm > div > span.css-dy7vad > span > span.css-1yvapiu')
-  if(titleElement === null) {
+  // const titleElement = target.querySelector(`${common} > div.css-1pi9u53 > span`)
+  const title = target.firstChild.getAttribute('data-subject')
+  if(title === null) {
 	  return
   }
-
-  const title = titleElement.textContent
 
   const info = target.querySelector('div:nth-child(1)')
   const projectName = info.getAttribute('data-project-code')
@@ -347,7 +347,8 @@ function appendButton(target) {
   if (previousNumberButton && previousNumberButton.textContent === postNumber) {
     return
   }
-  const buttonBar = target.querySelector('div.css-1iyoj2o > div.css-1z0phxv > div.css-13cn242 > div.css-ymnkqa > div')
+
+  const buttonBar = target.querySelector(`${common} > div.css-ymnkqa > div.css-tg9i4y`)
   if (previousNumberButton) {
     for (let i = 0; i < buttonIds.length; i++) {
       let button = target.querySelector('button[id=' + buttonIds[i] + ']')
