@@ -332,13 +332,12 @@ function createButtonStorageDelete(id, buttonTitle, saveId, saveText, buttonBar,
 function appendButton(target) {
   const common = 'div.css-1iyoj2o > div.css-1s331hr > div.css-1ee2lp9'
   const buttonIds = ['QFD1boxRNX0', 'QFD1boxRNX1', 'QFD1boxRNX2', 'QFD1boxRNX3']
-  // const titleElement = target.querySelector(`${common} > div.css-1pi9u53 > span`)
-  const title = target.firstChild.getAttribute('data-subject')
+  const title = document.getElementsByClassName("css-1yvapiu")[0].textContent
   if(title === null) {
 	  return
   }
 
-  const info = target.querySelector('div:nth-child(1)')
+  const info = target.querySelector("div[data-not-print=true]")
   const projectName = info.getAttribute('data-project-code')
   const postNumber = info.getAttribute('data-task-number')
   const projectId = info.getAttribute('data-project-id')
