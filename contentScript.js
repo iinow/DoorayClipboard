@@ -347,7 +347,7 @@ function appendButton(target) {
     return
   }
 
-  const buttonBar = target.querySelector(`${common} > div.css-ymnkqa > div.css-tg9i4y`)
+  const buttonBar = target.querySelector(`div.css-ymnkqa > div.css-tg9i4y`)
   if (previousNumberButton) {
     for (let i = 0; i < buttonIds.length; i++) {
       let button = target.querySelector('button[id=' + buttonIds[i] + ']')
